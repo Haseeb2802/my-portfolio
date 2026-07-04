@@ -8,7 +8,7 @@ export default function About() {
     <section id="about" className="section reveal" ref={ref}>
       <div className="container">
         <p className="section__kicker">Get to know me</p>
-        <h2 className="section__title">About Me</h2>
+        <h2 className="section__title" data-bg="About">About Me</h2>
 
         <div className="about__grid">
           <div className="glow-card about__card about__intro">

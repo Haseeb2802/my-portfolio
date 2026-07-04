@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { profile } from "../data/profile";
 import { ParticleCanvas } from "./Effects";
+import CodeWindow, { type Token } from "./CodeWindow";
 
 /** Typewriter cycling through the roles list. */
 function useTypewriter(words: string[]) {
@@ -70,11 +71,6 @@ function CountUp({ value }: { value: string }) {
 }
 
 /* ── Animated code card ─────────────────────────────────────── */
-interface Token {
-  text: string;
-  cls: string;
-}
-
 const CODE_LINES: Token[][] = [
   [{ text: "/**", cls: "c" }],
   [{ text: " * @NApiVersion 2.1", cls: "c" }],
@@ -121,61 +117,13 @@ const CODE_LINES: Token[][] = [
   [{ text: "};", cls: "p" }],
 ];
 
-// flatten to a char stream so we can type character-by-character
-const CHAR_STREAM = CODE_LINES.flatMap((line, li) => [
-  ...line.flatMap((tok) =>
-    tok.text.split("").map((ch) => ({ ch, cls: tok.cls, line: li }))
-  ),
-  { ch: "\n", cls: "p", line: li },
-]);
-
 function CodeCard() {
-  const [pos, setPos] = useState(0);
-
-  useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    if (pos < CHAR_STREAM.length) {
-      timer = setTimeout(() => setPos(pos + 1), 26);
-    } else {
-      timer = setTimeout(() => setPos(0), 7000); // pause, then replay
-    }
-    return () => clearTimeout(timer);
-  }, [pos]);
-
-  // group the typed chars back into class-runs for rendering
-  const runs: { cls: string; text: string }[] = [];
-  for (const { ch, cls } of CHAR_STREAM.slice(0, pos)) {
-    const last = runs[runs.length - 1];
-    if (last && last.cls === cls) last.text += ch;
-    else runs.push({ cls, text: ch });
-  }
-
   return (
-    <div className="codecard">
-      <div className="codecard__border" aria-hidden="true" />
-      <div className="codecard__inner">
-        <div className="codecard__bar">
-          <span className="codecard__dot codecard__dot--r" />
-          <span className="codecard__dot codecard__dot--y" />
-          <span className="codecard__dot codecard__dot--g" />
-          <span className="codecard__file">hr_ue_developer_profile.js</span>
-        </div>
-        <pre className="codecard__code">
-          <code>
-            {runs.map((r, i) => (
-              <span key={i} className={`tok-${r.cls}`}>
-                {r.text}
-              </span>
-            ))}
-            <span className="codecard__caret" />
-          </code>
-        </pre>
-      </div>
-
+    <CodeWindow file="ue_developer_profile.js" lines={CODE_LINES} speed={26}>
       <span className="hero__float hero__float--1">🏅 7× Oracle Certified</span>
       <span className="hero__float hero__float--2">⚡ SuiteScript 2.1</span>
       <span className="hero__float hero__float--3">🔗 API Integrations</span>
-    </div>
+    </CodeWindow>
   );
 }
 
@@ -186,8 +134,6 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="hero__grid" />
-      <div className="hero__glow hero__glow--1" />
-      <div className="hero__glow hero__glow--2" />
       <ParticleCanvas />
 
       <div className="container hero__inner">

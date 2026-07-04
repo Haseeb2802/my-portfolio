@@ -11,6 +11,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { GlobalEffects } from "./components/Effects";
 import TechMarquee from "./components/TechMarquee";
+import CtaBanner from "./components/CtaBanner";
+import Aurora from "./components/Aurora";
 
 type Theme = "dark" | "light";
 
@@ -27,6 +29,7 @@ function App() {
 
   return (
     <>
+      <Aurora />
       <GlobalEffects />
       <Navbar
         theme={theme}
@@ -39,6 +42,7 @@ function App() {
         <Skills />
         <ExperienceSection />
         <Projects />
+        <CtaBanner />
         <Certifications />
         <Education />
         <Testimonials />

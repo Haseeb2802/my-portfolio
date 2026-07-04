@@ -8,12 +8,37 @@ export default function ExperienceSection() {
     <section id="experience" className="section reveal" ref={ref}>
       <div className="container">
         <p className="section__kicker">Where I've worked</p>
-        <h2 className="section__title">Professional Experience</h2>
+        <h2 className="section__title" data-bg="Career">Professional Experience</h2>
 
         <div className="timeline">
-          {experiences.map((exp) => (
-            <div key={exp.company} className="timeline__item">
-              <div className="timeline__dot" />
+          {experiences.map((exp, i) => (
+            <div
+              key={exp.company}
+              className={`timeline__item ${
+                i % 2 === 0 ? "timeline__item--left" : "timeline__item--right"
+              }`}
+            >
+              <div className={`timeline__dot ${exp.current ? "timeline__dot--live" : ""}`} />
+              <div className="timeline__opposite" aria-hidden="true">
+                <span className="timeline__years">
+                  {(exp.period.match(/\d{4}|Present/g) ?? [exp.period])
+                    .filter((y, idx, arr) => arr.indexOf(y) === idx)
+                    .join(" — ")}
+                </span>
+                <span className="timeline__opp-company">{exp.company}</span>
+                {exp.current && <span className="badge badge--live">● Current Role</span>}
+                <div className="timeline__pills">
+                  {exp.highlights.map((h, j) => (
+                    <span
+                      key={h}
+                      className="timeline__pill"
+                      style={{ animationDelay: `${-j * 1.3}s` }}
+                    >
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
               <div className="glow-card timeline__card">
                 <div className="timeline__head">
                   <div>

@@ -110,6 +110,7 @@ export interface Experience {
   current?: boolean;
   points: string[];
   tags: string[];
+  highlights: string[];
 }
 
 export const experiences: Experience[] = [
@@ -128,6 +129,7 @@ export const experiences: Experience[] = [
       "Optimize script performance and ensure governance limits compliance",
     ],
     tags: ["SuiteScript", "REST APIs", "OAuth", "FreeMarker", "Postman"],
+    highlights: ["⚙️ 10+ Custom Solutions", "🔗 5+ Live Integrations", "🤖 AI × ERP Projects", "🏅 7× Oracle Certified"],
   },
   {
     company: "Software Alliance",
@@ -140,6 +142,7 @@ export const experiences: Experience[] = [
       "Validated bug fixes and performed retesting to maintain product reliability",
     ],
     tags: ["QA", "JIRA", "Test Planning", "Regression Testing"],
+    highlights: ["🧪 Web & Mobile QA", "🐞 JIRA Defect Lifecycle", "📋 Detailed Test Plans"],
   },
   {
     company: "Devsinc",
@@ -151,6 +154,7 @@ export const experiences: Experience[] = [
       "Improved problem-solving and software development practices in a professional environment",
     ],
     tags: ["Ruby on Rails", "Backend", "Teamwork"],
+    highlights: ["💎 Ruby on Rails", "🧠 Backend Features", "🤝 Agile Collaboration"],
   },
 ];
 
@@ -159,6 +163,7 @@ export interface Project {
   subtitle: string;
   icon: string;
   category: "NetSuite" | "Integration" | "Web & QA";
+  featured?: boolean;
   challenge: string;
   process: string;
   impact: string;
@@ -174,6 +179,7 @@ export const projects: Project[] = [
     subtitle: "Line-Level Approval Workflow · Integra Real Estate",
     icon: "✅",
     category: "NetSuite",
+    featured: true,
     challenge:
       "Sales orders were being fulfilled without finance sign-off against customer credit limits — and approvals had to happen per order line, not per order, with support for partial quantities.",
     process:
@@ -187,6 +193,7 @@ export const projects: Project[] = [
     subtitle: "Controlled AP Change Management · Tactile Systems",
     icon: "🧾",
     category: "NetSuite",
+    featured: true,
     challenge:
       "The AP team needed to modify posted Vendor Bills, but direct edits bypassed approval and left no audit trail — changes had to flow through a controlled, role-based review process.",
     process:

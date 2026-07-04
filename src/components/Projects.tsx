@@ -13,7 +13,7 @@ export default function Projects() {
     <section id="projects" className="section section--alt reveal" ref={ref}>
       <div className="container">
         <p className="section__kicker">Case studies</p>
-        <h2 className="section__title">Featured Projects</h2>
+        <h2 className="section__title" data-bg="Portfolio">Featured Projects</h2>
         <p className="section__subtitle">
           Each project is presented as a mini case study — the challenge, my
           process, and the impact delivered.
@@ -43,6 +43,9 @@ export default function Projects() {
               className="glow-card tilt project project--animated"
               style={{ animationDelay: `${i * 80}ms` }}
             >
+              {project.featured && (
+                <span className="project__ribbon">★ Featured</span>
+              )}
               <div className="project__head">
                 <span className="project__icon">{project.icon}</span>
                 <div>

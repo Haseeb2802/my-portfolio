@@ -20,7 +20,7 @@ export default function Testimonials() {
     <section id="testimonials" className="section reveal" ref={ref}>
       <div className="container">
         <p className="section__kicker">Social proof</p>
-        <h2 className="section__title">What People Say</h2>
+        <h2 className="section__title" data-bg="Reviews">What People Say</h2>
 
         <div
           className="slider"

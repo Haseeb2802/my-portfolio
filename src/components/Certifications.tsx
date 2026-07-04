@@ -23,7 +23,7 @@ export function Certifications() {
     <section id="certifications" className="section reveal" ref={ref}>
       <div className="container">
         <p className="section__kicker">Credentials</p>
-        <h2 className="section__title">Certifications</h2>
+        <h2 className="section__title" data-bg="Credentials">Certifications</h2>
         <p className="section__subtitle">
           {certifications.length} Oracle NetSuite certifications — click any
           certificate to view it.
@@ -95,7 +95,7 @@ export function Education() {
     <section id="education" className="section section--alt reveal" ref={ref}>
       <div className="container">
         <p className="section__kicker">Academic background</p>
-        <h2 className="section__title">Education</h2>
+        <h2 className="section__title" data-bg="Education">Education</h2>
 
         <div className="edu__list">
           {education.map((edu) => (
