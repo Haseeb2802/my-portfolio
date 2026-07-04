@@ -3,6 +3,10 @@
 // Edit the values below and the whole site updates automatically.
 // ─────────────────────────────────────────────────────────────
 
+// Prefixes public-folder files with the deploy base path
+// (/my-portfolio/ on GitHub Pages, / in local dev).
+const asset = (path: string) => import.meta.env.BASE_URL + path;
+
 export const profile = {
   name: "Abdul Haseeb",
   title: "NetSuite Developer",
@@ -18,7 +22,7 @@ export const profile = {
   // TODO: replace with your real profile URLs
   linkedin: "https://www.linkedin.com/in/abdul-haseeb",
   github: "https://github.com/abdul-haseeb",
-  cvFile: "/Abdul_Haseeb_NetSuite_Developer.pdf",
+  cvFile: asset("Abdul_Haseeb_NetSuite_Developer.pdf"),
   summary:
     "Oracle-certified NetSuite Developer with 2+ years of hands-on ERP development experience and 7 Oracle NetSuite certifications spanning AI, BI, Financials, and Accounting. I specialize in SuiteScript 2.x — designing end-to-end solutions from line-level approval workflows built with Suitelets and User Event scripts, to secure OAuth 1.0/2.0 REST integrations and branded FreeMarker document templates. My background in software quality assurance shapes how I build: governance-aware, performance-tuned, thoroughly tested code that ships reliably to production. I partner closely with international clients to translate real business requirements into scalable NetSuite automation that eliminates manual work and enforces financial control.",
   highlights: [
@@ -310,56 +314,56 @@ export const certifications: Certification[] = [
     issuer: "Oracle NetSuite",
     date: "December 26, 2025",
     level: "Professional",
-    image: "/certifications/accounting-professional.png",
-    pdf: "/certifications/accounting-professional.pdf",
+    image: asset("certifications/accounting-professional.png"),
+    pdf: asset("certifications/accounting-professional.pdf"),
   },
   {
     name: "Oracle NetSuite Certified Financial Planning and Analysis Professional",
     issuer: "Oracle NetSuite",
     date: "December 17, 2025",
     level: "Professional",
-    image: "/certifications/fpa-professional.png",
-    pdf: "/certifications/fpa-professional.pdf",
+    image: asset("certifications/fpa-professional.png"),
+    pdf: asset("certifications/fpa-professional.pdf"),
   },
   {
     name: "Oracle NetSuite Certified BI and Reporting Specialist",
     issuer: "Oracle NetSuite",
     date: "November 28, 2025",
     level: "Specialist",
-    image: "/certifications/bi-reporting-specialist.png",
-    pdf: "/certifications/bi-reporting-specialist.pdf",
+    image: asset("certifications/bi-reporting-specialist.png"),
+    pdf: asset("certifications/bi-reporting-specialist.pdf"),
   },
   {
     name: "Oracle NetSuite Certified BI and Saved Searches Professional",
     issuer: "Oracle NetSuite",
     date: "November 26, 2025",
     level: "Professional",
-    image: "/certifications/saved-searches-professional.png",
-    pdf: "/certifications/saved-searches-professional.pdf",
+    image: asset("certifications/saved-searches-professional.png"),
+    pdf: asset("certifications/saved-searches-professional.pdf"),
   },
   {
     name: "Oracle NetSuite Certified Financial Associate",
     issuer: "Oracle NetSuite",
     date: "November 10, 2025",
     level: "Associate",
-    image: "/certifications/financial-certificate.png",
-    pdf: "/certifications/financial-certificate.pdf",
+    image: asset("certifications/financial-certificate.png"),
+    pdf: asset("certifications/financial-certificate.pdf"),
   },
   {
     name: "Oracle NetSuite Certified BI and Reporting Associate",
     issuer: "Oracle NetSuite",
     date: "October 20, 2025",
     level: "Associate",
-    image: "/certifications/bi-reporting-associate.png",
-    pdf: "/certifications/bi-reporting-associate.pdf",
+    image: asset("certifications/bi-reporting-associate.png"),
+    pdf: asset("certifications/bi-reporting-associate.pdf"),
   },
   {
     name: "Oracle NetSuite Certified AI Foundations Associate",
     issuer: "Oracle NetSuite",
     date: "October 15, 2025",
     level: "Associate",
-    image: "/certifications/ai-certificate.png",
-    pdf: "/certifications/ai-certificate.pdf",
+    image: asset("certifications/ai-certificate.png"),
+    pdf: asset("certifications/ai-certificate.pdf"),
   },
 ];
 
