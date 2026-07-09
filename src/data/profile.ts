@@ -23,9 +23,9 @@ export const profile = {
   github: "https://github.com/Haseeb2802",
   cvFile: asset("Abdul_Haseeb_NetSuite_Developer_CV.pdf"),
   summary:
-    "Oracle-certified NetSuite Developer with 2+ years of hands-on ERP development experience and 7 Oracle NetSuite certifications spanning AI, BI, Financials, and Accounting. I specialize in SuiteScript 2.x — designing end-to-end solutions from line-level approval workflows built with Suitelets and User Event scripts, to secure OAuth 1.0/2.0 REST integrations and branded FreeMarker document templates. My background in software quality assurance shapes how I build: governance-aware, performance-tuned, thoroughly tested code that ships reliably to production. I partner closely with international clients to translate real business requirements into scalable NetSuite automation that eliminates manual work and enforces financial control.",
+    "Oracle-certified NetSuite Developer with 3+ years of experience across NetSuite ERP development, system integration, and quality assurance, holding 7 Oracle NetSuite certifications spanning AI, BI, Financials, and Accounting. I specialize in SuiteScript 2.x — designing end-to-end solutions from line-level approval workflows built with Suitelets and User Event scripts, to secure OAuth 1.0/2.0 REST integrations and branded FreeMarker document templates. My background in software quality assurance shapes how I build: governance-aware, performance-tuned, thoroughly tested code that ships reliably to production. I partner closely with international clients to translate real business requirements into scalable NetSuite automation that eliminates manual work and enforces financial control.",
   highlights: [
-    { value: "2+", label: "Years Experience" },
+    { value: "3+", label: "Years Experience" },
     { value: "7", label: "Oracle NetSuite Certifications" },
     { value: "10+", label: "NetSuite Solutions Delivered" },
     { value: "5+", label: "Integrations Built" },
@@ -120,7 +120,7 @@ export const experiences: Experience[] = [
   {
     company: "MaxDot AI Solutions",
     role: "NetSuite Developer",
-    period: "February 2024 — Present",
+    period: "July 2023 — Present",
     current: true,
     points: [
       "Develop custom NetSuite solutions using SuiteScript 2.0/2.1 including Client, User Event, Suitelet, Scheduled, and Map/Reduce scripts",
