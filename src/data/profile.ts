@@ -19,10 +19,9 @@ export const profile = {
   location: "Johar Town, Lahore, Pakistan",
   phone: "0314 6892864",
   email: "haseeb.irfan28@gmail.com",
-  // TODO: replace with your real profile URLs
-  linkedin: "https://www.linkedin.com/in/abdul-haseeb",
-  github: "https://github.com/abdul-haseeb",
-  cvFile: asset("Abdul_Haseeb_NetSuite_Developer.pdf"),
+  linkedin: "https://www.linkedin.com/in/abdul-haseeb-368806216/",
+  github: "https://github.com/Haseeb2802",
+  cvFile: asset("Abdul_Haseeb_NetSuite_Developer_CV.pdf"),
   summary:
     "Oracle-certified NetSuite Developer with 2+ years of hands-on ERP development experience and 7 Oracle NetSuite certifications spanning AI, BI, Financials, and Accounting. I specialize in SuiteScript 2.x — designing end-to-end solutions from line-level approval workflows built with Suitelets and User Event scripts, to secure OAuth 1.0/2.0 REST integrations and branded FreeMarker document templates. My background in software quality assurance shapes how I build: governance-aware, performance-tuned, thoroughly tested code that ships reliably to production. I partner closely with international clients to translate real business requirements into scalable NetSuite automation that eliminates manual work and enforces financial control.",
   highlights: [
@@ -129,7 +128,7 @@ export const experiences: Experience[] = [
       "Develop Advanced PDF/HTML Templates using FreeMarker for transactional documents",
       "Implement machine-to-machine integrations using REST APIs with OAuth 1.0 and OAuth 2.0 authentication",
       "Perform API testing and debugging using Postman",
-      "Integrate third-party platforms including LibreChat with NetSuite",
+      "Integrate Claude AI (direct Claude API) and the LibreChat platform with NetSuite as two separate secure integrations",
       "Optimize script performance and ensure governance limits compliance",
     ],
     tags: ["SuiteScript", "REST APIs", "OAuth", "FreeMarker", "Postman"],
@@ -207,17 +206,30 @@ export const projects: Project[] = [
     tags: ["SuiteScript 2.1", "User Event", "Custom Records", "Workflows", "Field Mapping"],
   },
   {
-    name: "NetSuite ↔ Claude AI (LibreChat) Integration",
+    name: "NetSuite ↔ Claude AI Integration",
     subtitle: "Conversational AI over ERP Data · MaxDot AI Solutions",
     icon: "🤖",
     category: "Integration",
     challenge:
       "The business wanted to ask questions of live NetSuite ERP data in natural language through Claude — without exposing credentials, bypassing permissions, or breaking script governance limits.",
     process:
-      "Built a machine-to-machine bridge between LibreChat (Claude-powered chat platform) and NetSuite: RESTlets secured with OAuth 2.0 expose curated ERP operations, SuiteQL powers efficient data retrieval behind each AI request, and every endpoint was validated with request-level checks and thorough Postman test suites.",
+      "Integrated Claude (Anthropic's AI model) directly with NetSuite: Claude API tool-use calls invoke OAuth 2.0-secured RESTlets, SuiteQL powers efficient data retrieval behind each AI request, and every endpoint was validated with request-level checks and thorough Postman test suites.",
     impact:
       "Teams query live ERP data conversationally through Claude while every request stays authenticated, permission-scoped, and inside NetSuite governance limits.",
-    tags: ["Claude AI", "LibreChat", "RESTlets", "SuiteQL", "OAuth 2.0", "Postman"],
+    tags: ["Claude AI", "Claude API", "RESTlets", "SuiteQL", "OAuth 2.0", "Postman"],
+  },
+  {
+    name: "NetSuite ↔ LibreChat Platform Integration",
+    subtitle: "Multi-Model AI Chat over ERP · MaxDot AI Solutions",
+    icon: "💬",
+    category: "Integration",
+    challenge:
+      "Teams wanted one chat platform — LibreChat, which hosts many AI models in a single interface — connected to NetSuite so ERP operations could be reached from the tool they already use.",
+    process:
+      "Built a separate machine-to-machine integration between the LibreChat platform and NetSuite: authenticated RESTlet endpoints expose curated ERP operations to the platform, with OAuth 2.0 security, request validation, and governance-limit compliance across every call.",
+    impact:
+      "A single, secure chat interface now connects the whole team to NetSuite data — independent of which AI model powers the conversation.",
+    tags: ["LibreChat", "Machine-to-Machine", "RESTlets", "OAuth 2.0", "NetSuite"],
   },
   {
     name: "NetSuite → Supabase Real-Time Data Sync",
